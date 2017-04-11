@@ -2,45 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69109d42-bc48-4f95-806b-02ddf37d7d4b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/046b221703fc51692450a2eaf3f8451d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/0a37d8706d9702c4c33cbab5114f92ad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/1067877d86def61996d60a28cb31dabc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/127001d1529de5695cf6a049e376488e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/18959bf13b7e7223b443cd8bcd43612d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/1db0d81ebabf2f4b931fe8f467011e76.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/1f15491954557bd345fc762d915be7d8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/2a7506df40a309911edec06939944ed1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/2d62f46903680cdc807164b171983919.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/2ebf3fe3d88f87ee2181d57afa2ceec3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/30b062ecddcaacd2cf09a310ce103086.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/35fae3cd70ad4c0cd76bb9f5fb0641aa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/37050374075721f1914f57a499265d51.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/417769f3f36f651b84944e0bde80fbd1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/486b645cc218a78359bcdd12b2005e43.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/4fb8ce532acd2b1e3afcf748cd15ddbc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/55c2b3a9534525e311e144c1a6c8d0d0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/5c53ccb1e088bb5fb8373336eca823db.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/6b44836f0f5f596eaf0c18ba78677b33.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/6c509091d204fa7960776e1f4043de28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/829beb08178caae94a403b95c31a47f9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/874e1fca74ae2dcca875f41432d2e300.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/8d6289f38a03ab1aa0e25dfe0d5f4237.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/a7cfbffed175c1372729da5c5adcaddc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/a9797600ac7cbf6865a7bd2279eff501.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/abd7181141fd1a88a1114f7fd1599a92.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/b0c09a614714f3dae89490d5a90d3e7b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/b99d72cf7fab7cc305394152aa5ff382.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/bff64d87c0c1bd49b4819c9bdb22b33c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/c25fbba76db96305db6e36cc22b192f7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/d0cc40f9fb18807619bf3757f1de1559.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/e6b524e5e70274ae86269f5fa0759e51.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/f42dfcae6fe0a0c55c3221e93a3f7baa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.screenshots/fa28bf8635c26e693851a8dcd8dc6bd9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main.xaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Scraper.py" afterPath="$PROJECT_DIR$/Web Scraper.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,8 +18,8 @@
       <file leaf-file-name="Web Scraper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Web Scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="211">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -79,6 +42,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/../Automatic-Article-Searcer-V2/Executables/Parser.py" />
         <option value="$PROJECT_DIR$/Web Scraper.py" />
       </list>
     </option>
@@ -163,12 +127,12 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26096824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26096824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34369886" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -232,10 +196,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../Automatic-Article-Searcer-V2/Executables/DataMatching.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Automatic-Article-Searcer-V2/Executables/Parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="67" column="27" lean-forward="false" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+          <folding>
+            <element signature="e#341#358#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Web Scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="211">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
