@@ -2,6 +2,16 @@ import os
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from tkinter import messagebox, filedialog
+
+def raw_or_not():
+    result = messagebox.askyesno('', 'Would you like to get raw article text?')
+    texts = get_texts(links)
+    if result == False:
+        texts = cleanup(texts)
+        return (texts)
+    else:
+        return(pd.DataFrame.from_dict(texts))
 
 def link_gen(results_path):
     tickers = os.listdir(results_path)
@@ -12,11 +22,30 @@ def link_gen(results_path):
             links.append(link)
     return(links)
 
+def value_gen(results_path, offset):
+    tickers = os.listdir(results_path)
+    value = []
+    for tick in tickers:
+        results = pd.read_csv(results_path + '\\' + tick, encoding = 'ISO-8859-1')
+        last0 = results['Last0'].tolist()
+        value_name = 'Last' + str(offset)
+        last_offset = results[value_name].tolist()
+        for i in range(len(last0)):
+            value.append((last_offset[i] - last0[i]) / last0[i] * 100)
+    return(value)
+
+def get_values(texts, results_path):
+    texts['Change20'] = value_gen(results_path, offset=20)
+    texts['Change60'] = value_gen(results_path, offset=60)
+    texts['Change120'] = value_gen(results_path, offset=120)
+    return(texts)
+
 def get_texts(urls):
     texts = {
         'url': [],
         'text': []
     }
+    i = 1 #For Testing
     for url in urls:
         page = requests.get(url)
         soup = BeautifulSoup(page.content, 'html.parser')
@@ -27,6 +56,8 @@ def get_texts(urls):
         text = ' '.join(text)
         texts['url'].append(url)
         texts['text'].append(text)
+        print (i) #For Testing
+        i = i + 1  #For Testing
     return(texts)
 
 def cleanup(texts):
@@ -52,11 +83,10 @@ def text_missing(texts):
             missing.append(texts.url[i])
     return(missing)
 
-links = link_gen('C:\\Users\\Jurgis\\Desktop\\Automatic-Article-Searcer-V2\\Data\\Results')
-#Make this interactive and/or automatically search for files
-
-texts = get_texts(links)
-texts = cleanup(texts)
+results_path = filedialog.askdirectory()
+links = link_gen(results_path)
+texts = raw_or_not()
+texts = get_values(texts, results_path)
 text_missing(texts)
 #This could be included inside cleanup function, but I need to figure out the causes for this issue.
 #For example wsj needs you to subscribe to view their articles.
@@ -69,5 +99,6 @@ try:
 except:
     texts.to_csv(dir_path + '\\Articles.csv', index=False, index_label=False)
 else:
-    texts = pd.concat([texts,old_texts], ignore_index = True, axis = 0)
+    texts = pd.concat([old_texts, texts], ignore_index = True, axis = 0)
     texts.to_csv(dir_path + '\\Articles.csv', index=False, index_label=False)
+
