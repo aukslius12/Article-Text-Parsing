@@ -4,23 +4,27 @@ import requests
 from bs4 import BeautifulSoup
 from tkinter import messagebox, filedialog
 
-def raw_or_not():
+def raw_or_not(info):
     result = messagebox.askyesno('', 'Would you like to get raw article text?')
-    texts = get_texts(links)
+    texts = get_texts(info)
     if result == False:
         texts = cleanup(texts)
         return (texts)
     else:
         return(pd.DataFrame.from_dict(texts))
 
-def link_gen(results_path):
+def info_gen(results_path):
     tickers = os.listdir(results_path)
     links = []
+    headlines = []
     for tick in tickers:
         results = pd.read_csv(results_path + '\\' + tick, encoding = 'ISO-8859-1')
         for link in results['Links'].tolist():
             links.append(link)
-    return(links)
+        for headline in results['Headlines'].tolist():
+            headlines.append(headline)
+    return({'Links': links,
+           'Headlines': headlines})
 
 def value_gen(results_path, offset):
     tickers = os.listdir(results_path)
@@ -40,30 +44,31 @@ def get_values(texts, results_path):
     texts['Change120'] = value_gen(results_path, offset=120)
     return(texts)
 
-def get_texts(urls):
+def get_texts(info):
     texts = {
-        'url': [],
-        'text': []
+        'headline': [],
+        'text': [],
+        'par': []
     }
     i = 1 #For Testing
-    for url in urls:
-        page = requests.get(url)
+    for i in range(len(info['Links'])):
+        page = requests.get(info['Links'][i])
         soup = BeautifulSoup(page.content, 'html.parser')
         tags = soup.find_all('p')
         text = []
         for tag in tags:
             text.append(tag.get_text())
-        text = ' '.join(text)
-        texts['url'].append(url)
+        texts['headline'].append(info['Headlines'][i])
         texts['text'].append(text)
+        texts['par'].append(len(tags))
         print (i) #For Testing
-        i = i + 1  #For Testing
     return(texts)
 
 def cleanup(texts):
     clean_texts = {
         'url' : texts['url'],
-        'text' : []
+        'text' : [],
+        'par': texts['par']
     }
     for text in texts['text']:
         text = text.split()
@@ -71,7 +76,6 @@ def cleanup(texts):
         for word in text:
             temp_text.append(''.join(e for e in word if e.isalnum() and not e.isdigit()))
         temp_text = [t for t in temp_text if t]
-        text = ' '.join(temp_text)
         text = text.lower()
         clean_texts['text'].append(text)
     return(pd.DataFrame.from_dict(clean_texts))
@@ -83,9 +87,32 @@ def text_missing(texts):
             missing.append(texts.url[i])
     return(missing)
 
+
+def split_files(texts):
+    headline_file = texts.drop('text', axis=1)
+    headline_file = headline_file.drop('par', axis=1)
+    text_file = {
+        'paragraph': [],
+        'par_no': [],
+        'Change20': [],
+        'Change60': [],
+        'Change120': []
+    }
+    for i in range(len(texts['text'])):
+        j = 1
+        for text in texts['text'][i]:
+            text_file['paragraph'].append(text)
+            text_file['par_no'].append(j)
+            j = j + 1
+            text_file['Change20'].append(texts['Change20'][i])
+            text_file['Change60'].append(texts['Change20'][i])
+            text_file['Change120'].append(texts['Change20'][i])
+
+    return ([pd.DataFrame.from_dict(headline_file), pd.DataFrame.from_dict(text_file)])
+
 results_path = filedialog.askdirectory()
-links = link_gen(results_path)
-texts = raw_or_not()
+info = info_gen(results_path)
+texts = raw_or_not(info)
 texts = get_values(texts, results_path)
 text_missing(texts)
 #This could be included inside cleanup function, but I need to figure out the causes for this issue.
@@ -93,12 +120,17 @@ text_missing(texts)
 for missing_value in text_missing(texts):
     texts = texts[texts.url != missing_value]
 
+texts = split_files(texts)
+
 dir_path = os.getcwd()
 try:
-    old_texts = pd.read_csv(dir_path + '\\Articles.csv', encoding = 'ISO-8859-1')
+    old_headlines = pd.read_csv(dir_path + '\\Headlines.csv', encoding = 'ISO-8859-1')
+    old_texts = pd.read_csv(dir_path + '\\Texts.csv', encoding='ISO-8859-1')
 except:
-    texts.to_csv(dir_path + '\\Articles.csv', index=False, index_label=False)
+    texts[0].to_csv(dir_path + '\\Headlines.csv', index=False, index_label=False)
+    texts[1].to_csv(dir_path + '\\Texts.csv', index=False, index_label=False)
 else:
-    texts = pd.concat([old_texts, texts], ignore_index = True, axis = 0)
-    texts.to_csv(dir_path + '\\Articles.csv', index=False, index_label=False)
-
+    texts[0] = pd.concat([old_headlines, texts[0]], ignore_index = True, axis = 0)
+    texts[1] = pd.concat([old_texts, texts[1]], ignore_index=True, axis=0)
+    texts[0].to_csv(dir_path + '\\Headlines.csv', index=False, index_label=False)
+    texts[0].to_csv(dir_path + '\\Texts.csv', index=False, index_label=False)
